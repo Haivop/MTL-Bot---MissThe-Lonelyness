@@ -5,7 +5,7 @@
     environment:
       POSTGRES_USER: discord_bot_user
       POSTGRES_PASSWORD: discord_bot_password
-      POSTGRES_DB: mtldatabase
+      POSTGRES_DB: postgres
     ports:
       - "5432:5432"
     volumes:
