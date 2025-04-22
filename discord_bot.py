@@ -1,4 +1,5 @@
 import discord
+import psycopg2
 from discord.ext import commands
 from discord.ui import View, Button
 
@@ -8,6 +9,25 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(command_prefix=PREFIX, intents=intents)
+
+# Підключення до бази даних
+conn = psycopg2.connect(
+    dbname="mtldatabase",
+    user="discord_bot_user",
+    password="discord_bot_password",
+    host="127.0.0.1",  # IP контейнера
+    port="5432"
+)
+
+cursor = conn.cursor()
+
+cursor.execute("SELECT version();")
+version = cursor.fetchone()
+print("PostgreSQL version:", version)
+
+cursor.close()
+conn.close()
+print()
 
 # Команда info
 @bot.command()

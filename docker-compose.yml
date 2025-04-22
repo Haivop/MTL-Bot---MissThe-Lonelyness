@@ -1,0 +1,12 @@
+﻿services:
+  db:
+    image: postgres:latest
+    container_name: gdc-container
+    environment:
+      POSTGRES_USER: discord_bot_user
+      POSTGRES_PASSWORD: discord_bot_password
+      POSTGRES_DB: mtldatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
