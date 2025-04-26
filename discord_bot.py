@@ -4,7 +4,7 @@ import asyncpg
 import discord
 from discord.ext import commands
 from discord.ui import View, Button
-TOKEN = 'MTM2Mzk0NDQxOTcwNjkyOTQyNQ.GxTMM3.h05THtkpNeL8s4Idn4O76dJcFTRYFJneSo30qA'
+TOKEN = ''
 
 PREFIX = '!'
 intents = discord.Intents.default()
